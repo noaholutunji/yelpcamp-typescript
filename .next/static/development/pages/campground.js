@@ -12731,7 +12731,7 @@ var Navbar = function Navbar() {
 
 /***/ }),
 
-/***/ 0:
+/***/ 2:
 /*!***************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fcampground&absolutePagePath=%2Fhome%2Fnoah%2FDesktop%2Fyelpcamp%2Fpages%2Fcampground.tsx ***!
   \***************************************************************************************************************************************/
@@ -12754,5 +12754,5 @@ module.exports = dll_13346faca0e924a89b24;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=campground.js.map

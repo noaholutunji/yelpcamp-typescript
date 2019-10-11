@@ -12628,7 +12628,7 @@ var Login = function Login() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*****************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Flogin&absolutePagePath=%2Fhome%2Fnoah%2FDesktop%2Fyelpcamp%2Fpages%2Flogin.tsx ***!
   \*****************************************************************************************************************************/
@@ -12651,5 +12651,5 @@ module.exports = dll_13346faca0e924a89b24;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=login.js.map
