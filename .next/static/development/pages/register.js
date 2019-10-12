@@ -12541,10 +12541,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _axios_order__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../axios-order */ "./src/axios-order.ts");
-/* harmony import */ var _components_Navigation_Navbar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/Navigation/Navbar */ "./src/components/Navigation/Navbar.tsx");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _axios_order__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../axios-order */ "./src/axios-order.ts");
+/* harmony import */ var _components_Navigation_Navbar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Navigation/Navbar */ "./src/components/Navigation/Navbar.tsx");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -12574,7 +12577,7 @@ var Register = function Register() {
       username: username,
       password: password
     };
-    _axios_order__WEBPACK_IMPORTED_MODULE_4__["default"].post('/register', data).then(function (response) {
+    _axios_order__WEBPACK_IMPORTED_MODULE_5__["default"].post('/register', data).then(function (response) {
       if (response.data) {
         js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.set('token', response.data.token);
         js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.set('user', _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(response.data.user));
@@ -12587,7 +12590,7 @@ var Register = function Register() {
     });
   };
 
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(_components_Navigation_Navbar__WEBPACK_IMPORTED_MODULE_5__["default"], null), __jsx("div", {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(_components_Navigation_Navbar__WEBPACK_IMPORTED_MODULE_6__["default"], null), __jsx("div", {
     className: "container"
   }, __jsx("h1", {
     style: {
@@ -12625,16 +12628,17 @@ var Register = function Register() {
     style: {
       paddingTop: '10px'
     }
-  }, __jsx("a", {
-    href: "/login"
-  }, "Click here to login")))));
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: "/login",
+    as: "/login"
+  }, __jsx("a", null, "Click here to login"))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Register);
 
 /***/ }),
 
-/***/ 0:
+/***/ 3:
 /*!***********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fregister&absolutePagePath=%2Fhome%2Fnoah%2FDesktop%2Fyelpcamp%2Fpages%2Fregister.tsx ***!
   \***********************************************************************************************************************************/
@@ -12657,5 +12661,5 @@ module.exports = dll_13346faca0e924a89b24;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=register.js.map

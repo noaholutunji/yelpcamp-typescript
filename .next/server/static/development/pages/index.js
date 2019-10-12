@@ -2037,10 +2037,10 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./pages/campground.tsx":
-/*!******************************!*\
-  !*** ./pages/campground.tsx ***!
-  \******************************/
+/***/ "./pages/index.tsx":
+/*!*************************!*\
+  !*** ./pages/index.tsx ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2048,199 +2048,23 @@ if (false) {} else {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _src_components_Campgrounds_Show_Show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/components/Campgrounds/Show/Show */ "./src/components/Campgrounds/Show/Show.tsx");
+/* harmony import */ var _src_components_Landing_Landing__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/components/Landing/Landing */ "./src/components/Landing/Landing.tsx");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const Display = ({
-  id
-}) => {
-  return __jsx(_src_components_Campgrounds_Show_Show__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    id: id
-  });
+const Index = () => {
+  return __jsx(_src_components_Landing_Landing__WEBPACK_IMPORTED_MODULE_1__["default"], null);
 };
 
-Display.getInitialProps = async ({
-  query
-}) => {
-  return {
-    id: query.id
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Display);
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
-/***/ "./src/axios-order.ts":
-/*!****************************!*\
-  !*** ./src/axios-order.ts ***!
-  \****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-
-const instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
-  baseURL: 'https://noah-yelpcamp-typescript-api.herokuapp.com'
-});
-/* harmony default export */ __webpack_exports__["default"] = (instance);
-
-/***/ }),
-
-/***/ "./src/components/Campgrounds/Show/Show.tsx":
-/*!**************************************************!*\
-  !*** ./src/components/Campgrounds/Show/Show.tsx ***!
-  \**************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! js-cookie */ "js-cookie");
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _axios_order__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../axios-order */ "./src/axios-order.ts");
-/* harmony import */ var _Table_Table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Table/Table */ "./src/components/Campgrounds/Show/Table/Table.tsx");
-/* harmony import */ var _Navigation_Navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Navigation/Navbar */ "./src/components/Navigation/Navbar.tsx");
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-
-const Show = ({
-  id
-}) => {
-  const {
-    0: campground,
-    1: setCampground
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
-  const {
-    0: user,
-    1: setUser
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null); // const router = useRouter();
-  // const { id } = router.query;
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    const authUser = js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.get('user');
-
-    if (authUser) {
-      setUser(JSON.parse(authUser));
-    }
-
-    _axios_order__WEBPACK_IMPORTED_MODULE_2__["default"].get(`/campgrounds/${id}`).then(response => {
-      setCampground(response.data);
-    }).catch(function (error) {
-      console.log(error);
-    });
-  }, []);
-
-  const tabRow = () => {
-    return campground && __jsx(_Table_Table__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      obj: campground,
-      userId: user ? user._id : '',
-      key: campground._id
-    });
-  };
-
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Navigation_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], null), __jsx("div", {
-    className: "container"
-  }, tabRow()));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Show);
-
-/***/ }),
-
-/***/ "./src/components/Campgrounds/Show/Table/Table.tsx":
-/*!*********************************************************!*\
-  !*** ./src/components/Campgrounds/Show/Table/Table.tsx ***!
-  \*********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _axios_order__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../axios-order */ "./src/axios-order.ts");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! js-cookie */ "js-cookie");
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-
-
-const Table = props => {
-  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_4__["useRouter"])();
-  const {
-    id
-  } = router.query;
-
-  const deleted = () => {
-    const token = js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.get('token');
-    _axios_order__WEBPACK_IMPORTED_MODULE_1__["default"].delete(`/campgrounds/${id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    }).then(() => {
-      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push('/campgrounds');
-    }).catch(err => console.log(err));
-  };
-
-  return __jsx("div", null, __jsx("div", {
-    className: "row"
-  }, __jsx("div", {
-    className: "col-md-9"
-  }, __jsx("div", {
-    className: "thumbnail"
-  }, __jsx("img", {
-    style: {
-      width: '100%'
-    },
-    alt: "",
-    className: "img-responsive",
-    src: props.obj.image
-  }), __jsx("div", {
-    className: "caption-full"
-  }, __jsx("h4", {
-    className: "pull-right"
-  }, "\u20A6", props.obj.price), __jsx("h4", null, props.obj.name), __jsx("p", null, props.obj.description), props.userId === props.obj.owner && __jsx("div", null, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: `/edit?id=${props.obj._id}`,
-    as: `/edit/${props.obj._id}`
-  }, __jsx("a", {
-    className: "btn btn-primary"
-  }, "Edit")), __jsx("button", {
-    style: {
-      marginLeft: '20px'
-    },
-    onClick: deleted,
-    className: "btn btn-danger"
-  }, "Delete")))))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Table);
-
-/***/ }),
-
-/***/ "./src/components/Navigation/Navbar.tsx":
-/*!**********************************************!*\
-  !*** ./src/components/Navigation/Navbar.tsx ***!
-  \**********************************************/
+/***/ "./src/components/Landing/Landing.tsx":
+/*!********************************************!*\
+  !*** ./src/components/Landing/Landing.tsx ***!
+  \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2250,95 +2074,110 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! js-cookie */ "js-cookie");
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
+const Landing = () => {
+  const Header = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+  `;
+  const H1 = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.h1`
+    color: #fff;
+  `;
+  const Slideshow = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.ul`
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  `;
+  const Li = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.li`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 50s linear infinite;
 
-const Navbar = () => {
-  const logout = () => {
-    js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.remove('token');
-    js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.remove('user');
-    next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push('/campgrounds');
-  };
-
-  const user = js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.get('token');
-  return __jsx("div", null, __jsx("nav", {
-    className: "navbar navbar-default bg-info"
-  }, __jsx("div", {
-    className: "container-fluid"
-  }, __jsx("div", {
-    className: "navbar-header"
-  }, __jsx("button", {
-    type: "button",
-    className: "navbar-toggle collapsed",
-    "data-toggle": "collapse",
-    "data-target": "#navbar-collapse",
-    "aria-expanded": "false",
-    "aria-controls": "navbar-collapse"
-  }, __jsx("span", {
-    className: "sr-only"
-  }, "Toggle navigation"), __jsx("span", {
-    className: "icon-bar"
-  }), __jsx("span", {
-    className: "icon-bar"
-  }), __jsx("span", {
-    className: "icon-bar"
-  })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/"
-  }, __jsx("a", {
-    className: "navbar-brand"
-  }, "YelpCamp"))), __jsx("div", {
-    className: "collapse navbar-collapse",
-    id: "navbar-collapse",
-    "aria-expanded": "false"
-  }, __jsx("ul", {
-    className: "nav navbar-nav navbar-right"
-  }, __jsx("li", null, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/campgrounds"
-  }, __jsx("a", null, "Campgrounds"))), !user ? __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("li", null, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/login"
-  }, __jsx("a", null, "Login"))), __jsx("li", null, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/register"
-  }, __jsx("a", null, "Signup")))) : __jsx("li", {
-    onClick: logout
-  }, __jsx("a", {
-    className: "mt-5",
-    style: {
-      cursor: 'pointer'
+    :nth-child(1) {
+      background-image: url(http://i.imgur.com/K3mPv14.jpg);
     }
-  }, "Logout")))))));
+
+    :nth-child(2) {
+      background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+      animation-delay: 10s;
+    }
+
+    :nth-child(3) {
+      background-image: url(http://i.imgur.com/emvhOnb.jpg);
+      animation-delay: 20s;
+    }
+
+    :nth-child(4) {
+      background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+      animation-delay: 30s;
+    }
+
+    :nth-child(5) {
+      background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+      animation-delay: 40s;
+    }
+
+    @keyframes imageAnimation {
+      0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+      }
+      10% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+      }
+      20% {
+        opacity: 1;
+      }
+      30% {
+        opacity: 0;
+      }
+    }
+  `;
+  return __jsx("div", null, __jsx(Header, null, __jsx(H1, null, __jsx("span", {
+    className: "glyphicon glyphicon-tent"
+  }), "Welcome to YelpCamp!"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/campgrounds"
+  }, __jsx("a", {
+    className: "btn btn-lg btn-success"
+  }, "View All Campgrounds"))), __jsx(Slideshow, null, __jsx(Li, null), __jsx(Li, null), __jsx(Li, null), __jsx(Li, null), __jsx(Li, null)));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Navbar);
+/* harmony default export */ __webpack_exports__["default"] = (Landing);
 
 /***/ }),
 
 /***/ 5:
-/*!************************************!*\
-  !*** multi ./pages/campground.tsx ***!
-  \************************************/
+/*!*******************************!*\
+  !*** multi ./pages/index.tsx ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/noah/Desktop/yelpcamp/pages/campground.tsx */"./pages/campground.tsx");
+module.exports = __webpack_require__(/*! /home/noah/Desktop/yelpcamp/pages/index.tsx */"./pages/index.tsx");
 
-
-/***/ }),
-
-/***/ "axios":
-/*!************************!*\
-  !*** external "axios" ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
 
 /***/ }),
 
@@ -2419,28 +2258,6 @@ module.exports = require("core-js/library/fn/promise");
 
 /***/ }),
 
-/***/ "js-cookie":
-/*!****************************!*\
-  !*** external "js-cookie" ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("js-cookie");
-
-/***/ }),
-
-/***/ "next/router":
-/*!******************************!*\
-  !*** external "next/router" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/router");
-
-/***/ }),
-
 /***/ "prop-types":
 /*!*****************************!*\
   !*** external "prop-types" ***!
@@ -2474,6 +2291,17 @@ module.exports = require("react");
 
 /***/ }),
 
+/***/ "styled-components":
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
+
+/***/ }),
+
 /***/ "url":
 /*!**********************!*\
   !*** external "url" ***!
@@ -2486,4 +2314,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=campground.js.map
+//# sourceMappingURL=index.js.map

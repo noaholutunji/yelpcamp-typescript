@@ -1,6 +1,7 @@
 import React, { useState, SyntheticEvent } from 'react';
 import Router from 'next/router';
 import cookie from 'js-cookie';
+import Link from 'next/link';
 import axios from '../../axios-order';
 import Navbar from '../../components/Navigation/Navbar';
 
@@ -67,7 +68,9 @@ const Register = (): JSX.Element => {
             </button>
           </form>
           <p style={{ paddingTop: '10px' }}>
-            <a href="/login">Click here to login</a>
+            <Link href="/login" as="/login">
+              <a>Click here to login</a>
+            </Link>
           </p>
         </div>
       </div>
